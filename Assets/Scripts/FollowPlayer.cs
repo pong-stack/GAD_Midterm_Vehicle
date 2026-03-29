@@ -1,21 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour
 {
     public GameObject player;
+    [Min(0.01f)]
+    public float positionSmoothTime = 0.12f;
 
     Vector3 offset;
+    Vector3 smoothVelocity;
 
-    private void Start()
+    void Start()
     {
-        offset = transform.position - player.transform.position;
+        if (player != null)
+            offset = transform.position - player.transform.position;
     }
 
-    // Update is called once per frame, LateUpdate later in the frame, after the vehicle has moved
     void LateUpdate()
     {
-        transform.position = player.transform.position + offset;
+        if (player == null)
+            return;
+
+        Vector3 target = player.transform.position + offset;
+        transform.position = Vector3.SmoothDamp(transform.position, target, ref smoothVelocity, positionSmoothTime);
     }
 }

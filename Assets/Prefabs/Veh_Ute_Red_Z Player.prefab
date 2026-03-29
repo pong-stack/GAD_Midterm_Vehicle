@@ -93,7 +93,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 178130, guid: 70bf34f6c25c948458f254e87188b00b, type: 3}
       propertyPath: m_Name
-      value: Player Vehicle 1
+      value: Player Vehicle
       objectReference: {fileID: 0}
     - target: {fileID: 436868, guid: 70bf34f6c25c948458f254e87188b00b, type: 3}
       propertyPath: m_RootOrder
@@ -197,13 +197,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6714b1d47600014c84a90577c00147f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxForwardSpeed: 20
-  maxRotationSpeed: 50
-  forwardAxis: Vertical 1
-  lateralAxis: Horizontal 1
+  maxForwardSpeed: 24
+  accelerationTime: 0.28
+  decelerationTime: 0.45
+  maxRotationSpeed: 72
+  steerWhileCoasting: 0.22
+  forwardAxis: Vertical
+  lateralAxis: Horizontal
   thirdPersonCamera: {fileID: 0}
   driverCamera: {fileID: 986708100}
-  switchCameraKey: 32
+  switchCameraKey: 99
 --- !u!4 &2558725443931138010 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 436868, guid: 70bf34f6c25c948458f254e87188b00b, type: 3}
